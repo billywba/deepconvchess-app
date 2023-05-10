@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={{ fontWeight: 'bold', fontFamily: 'Arial', fontSize: 36 }}>DEEPCONVCHESS</Text>
+      <Text style={{ fontWeight: 'bold', fontFamily: 'Arial', fontSize: 36, marginBottom: '30%'}}>DEEPCONVCHESS</Text>
 
       <TouchableOpacity>
         <Text style={styles.button}>SCAN A BOARD</Text>
