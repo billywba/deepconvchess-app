@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={{ fontWeight: 'bold', fontFamily: 'Arial', fontSize: 36, marginBottom: '30%'}}>DEEPCONVCHESS</Text>
+      <Text style={styles.title}>DEEPCONVCHESS</Text>
 
       <TouchableOpacity>
         <Text style={styles.button}>SCAN A BOARD</Text>
@@ -20,6 +20,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  title: {
+    fontWeight: 'bold', 
+    fontFamily: 'Arial', 
+    fontSize: 36, 
+    marginBottom: '30%'
   },
   button: {
     backgroundColor: '#d9d9d9',
