@@ -1,14 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+
+import Home from './components/Home'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>DEEPCONVCHESS</Text>
+      <Home />
 
-      <TouchableOpacity>
-        <Text style={styles.button}>SCAN A BOARD</Text>
-      </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );
@@ -20,18 +19,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  title: {
-    fontWeight: 'bold', 
-    fontFamily: 'Arial', 
-    fontSize: 36, 
-    marginBottom: '30%'
-  },
-  button: {
-    backgroundColor: '#d9d9d9',
-    color: 'black',
-    fontSize: 20,
-    padding: 10,
-    fontWeight: 'bold'
   }
 });
