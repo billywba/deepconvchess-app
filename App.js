@@ -18,7 +18,6 @@ export default function App() {
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Statistics" component={Statistics} />
         </Stack.Navigator>
-
       </NavigationContainer>
 
       <StatusBar style="auto" />
