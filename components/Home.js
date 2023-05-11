@@ -1,12 +1,14 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-const Home = () => {
+const Home = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>DEEPCONVCHESS</Text>
 
             <TouchableOpacity>
-                <Text style={styles.button}>SCAN A BOARD</Text>
+              <Text style={styles.button} onPress={() => navigation.navigate("Statistics")}>
+                SCAN A BOARD
+              </Text>
             </TouchableOpacity>
         </View>
     );
