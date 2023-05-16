@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, SafeAreaView, Button, Image } from 'react-nativ
 import { Camera } from 'expo-camera';
 
 import CameraError from './CameraError'
+import ScanBoard from './ScanBoard';
 
 function TakeImage({navigation}) {
     let cameraRef = useRef();
@@ -35,7 +36,9 @@ function TakeImage({navigation}) {
     }
 
     if (photo) {
-        navigation.navigate('ScanBoard')
+        return (
+            <ScanBoard boardImage={photo}/>
+        )
     }
 
 

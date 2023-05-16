@@ -1,9 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native';
 
-const ScanBoard = ({ boardPhoto }) => {
+
+function ScanBoard({ boardImage }) {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>SCANNING BOARD</Text>
+          <Text style={styles.title}>SCANNING BOARD</Text>
+
+          <SafeAreaView>
+            <Image style={styles.preview} source={boardImage} />
+          </SafeAreaView>
         </View>
     );
 }
@@ -27,6 +32,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     padding: 10,
     fontWeight: 'bold'
+  },
+  preview: {
+    alignSelf: 'stretch',
+    // flex: 1,
+    maxWidth: 300, 
+    maxHeight: 300
   }
 });
 
