@@ -5,7 +5,7 @@ import { Camera } from 'expo-camera';
 
 import CameraError from './CameraError'
 
-function TakeImage() {
+function TakeImage({navigation}) {
     let cameraRef = useRef();
     const [hasCameraPermission, setHasCameraPermission] = useState();
     const [photo, setPhoto] = useState();
@@ -35,11 +35,7 @@ function TakeImage() {
     }
 
     if (photo) {
-        return (
-            <SafeAreaView style={styles.container}>
-                <Image style={styles.preview} source={{ uri: "data:image/jpg;base64," + photo.base64 }} />
-            </SafeAreaView>
-        )
+        navigation.navigate('ScanBoard')
     }
 
 

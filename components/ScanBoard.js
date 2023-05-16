@@ -1,15 +1,9 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-const Home = ({ navigation }) => {
+const ScanBoard = ({ boardPhoto }) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>DEEPCONVCHESS</Text>
-
-            <TouchableOpacity>
-              <Text style={styles.button} onPress={() => navigation.navigate("TakeImage")}>
-                SCAN A BOARD
-              </Text>
-            </TouchableOpacity>
+            <Text style={styles.title}>SCANNING BOARD</Text>
         </View>
     );
 }
@@ -36,4 +30,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Home;
+export default ScanBoard;

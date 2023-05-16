@@ -6,6 +6,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Home from './components/Home'
 import Statistics from './components/Statistics'
+import TakeImage from './components/TakeImage'
+import ScanBoard from './components/ScanBoard';
 
 
 const Stack = createNativeStackNavigator();
@@ -17,6 +19,8 @@ export default function App() {
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Statistics" component={Statistics} />
+          <Stack.Screen name="TakeImage" component={TakeImage} />
+          <Stack.Screen name="ScanBoard" component={ScanBoard} />
         </Stack.Navigator>
       </NavigationContainer>
 
