@@ -1,16 +1,36 @@
+import { useEffect } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native';
+
+import axios from 'axios';
 
 
 function ScanBoard({ boardImage }) {
-    return (
-        <View style={styles.container}>
-          <Text style={styles.title}>SCANNING BOARD</Text>
 
-          <SafeAreaView>
-            <Image style={styles.preview} source={boardImage} />
-          </SafeAreaView>
-        </View>
-    );
+  const sendRequest = async (imageBase64) => {
+    try {
+      const requestData = {
+        image: imageBase64
+      };
+
+      const response = await axios.post('http://10.148.130.210:5000/image/process', requestData);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    sendRequest(boardImage.base64)
+  }, [])
+
+  return (
+      <View style={styles.container}>
+        <Text style={styles.title}>SCANNING BOARD</Text>
+
+        <SafeAreaView>
+          <Image style={styles.preview} source={boardImage} />
+        </SafeAreaView>
+      </View>
+  );
 }
 
 const styles = StyleSheet.create({

@@ -6,7 +6,8 @@ import { Camera } from 'expo-camera';
 import CameraError from './CameraError'
 import ScanBoard from './ScanBoard';
 
-function TakeImage({navigation}) {
+
+function TakeImage() {
     let cameraRef = useRef();
     const [hasCameraPermission, setHasCameraPermission] = useState();
     const [photo, setPhoto] = useState();
