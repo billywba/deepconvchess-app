@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Button, Image } from 'react-native';
+import { StyleSheet, View, Button, Dimensions } from 'react-native';
 
 import { Camera } from 'expo-camera';
 
@@ -42,24 +42,46 @@ function TakeImage() {
         )
     }
 
+    const windowWidth = Dimensions.get('window').width;
+    const windowHeight = Dimensions.get('window').height;
+    const cameraSize = 400;
+    const cameraMarginHorizontal = (windowWidth - cameraSize) / 2;
+    const cameraMarginVertical = (windowHeight - cameraSize) / 2;
 
     return (
-        <Camera style={styles.container} ref={cameraRef}>
-            <View style={styles.buttonContainer}>
-                <Button title="Take Picture" onPress={takePic} />
-            </View>
-        </Camera>
-    )
+        <View style={styles.container}>
+            <Camera
+                style={{
+                    width: cameraSize,
+                    height: cameraSize,
+                    marginLeft: cameraMarginHorizontal,
+                    marginRight: cameraMarginHorizontal,
+                    marginTop: cameraMarginVertical,
+                    marginBottom: cameraMarginVertical,
+                }}
+                ref={cameraRef}
+            >
+                <View style={{
+                    marginTop: cameraSize - 50
+                }}>
+                    <Button title="Take Picture" onPress={takePic} />
+                </View>
+            </Camera>
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'flex-end'
+        justifyContent: 'flex-end',
+    },
+    camera: {
+        
     },
     buttonContainer: {
-        marginBottom: 32
+        // marginBottom: 32
     },
     preview: {
         alignSelf: 'stretch',
