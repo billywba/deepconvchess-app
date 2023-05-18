@@ -50,23 +50,22 @@ function TakeImage() {
 
     return (
         <View style={styles.container}>
-            <Camera
-                style={{
+            <View style={styles.cameraContainer}>
+                <Camera
+                    style={{
                     width: cameraSize,
                     height: cameraSize,
                     marginLeft: cameraMarginHorizontal,
                     marginRight: cameraMarginHorizontal,
                     marginTop: cameraMarginVertical,
                     marginBottom: cameraMarginVertical,
-                }}
-                ref={cameraRef}
-            >
-                <View style={{
-                    marginTop: cameraSize - 50
-                }}>
-                    <Button title="Take Picture" onPress={takePic} />
-                </View>
-            </Camera>
+                    }}
+                    ref={cameraRef}
+                />
+            </View>
+            <View style={styles.buttonContainer}>
+                <Button title="Take Picture" onPress={takePic} />
+            </View>
         </View>
     );
 }
@@ -74,19 +73,19 @@ function TakeImage() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        justifyContent: 'center',
         alignItems: 'center',
-        justifyContent: 'flex-end',
     },
-    camera: {
-        
+    cameraContainer: {
+        flex: 0.9,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     buttonContainer: {
-        // marginBottom: 32
+        flex: 0.1,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
-    preview: {
-        alignSelf: 'stretch',
-        flex: 1
-    }
-})
+});
 
 export default TakeImage;
